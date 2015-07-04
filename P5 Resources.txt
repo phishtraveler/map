@@ -1,0 +1,26 @@
+
+Here are some of the resources and links I used while writing and coding P5 Neighborhood Map Project:
+
+http://knockoutjs.com/documentation/introduction.html
+http://www.strathweb.com/2012/07/knockout-js-pro-tips-working-with-observable-arrays/
+http://discussions.udacity.com/t/need-some-help-with-project-5/7328
+http://api.jquery.com/jquery.ajax/#jqXHR
+https://developers.google.com/maps/
+https://www.youtube.com/watch?v=ZE8ODPL2VPI&list=PLrtRjIOGYRowjKK0zR53AdAJzN7tqIV9H&index=1
+https://www.youtube.com/watch?v=FuL-OX_O-vQ
+https://www.youtube.com/watch?v=iPq69CnYxMA
+http://gmap-tutorial-101.appspot.com/mapsapi101/toc
+https://developer.foursquare.com/start
+http://stackoverflow.com/questions/17122928/how-to-use-tilesloaded-event-for-google-maps-v3
+http://www.sitepoint.com/google-maps-api-jquery/
+https://developers.google.com/maps/documentation/javascript/examples/marker-animations
+https://css-tricks.com/multiple-class-id-selectors/
+http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/
+http://udacity.github.io/frontend-nanodegree-styleguide/css.html
+http://www.dotnetbull.com/2012/07/jquery-post-vs-get-vs-ajax.html   ($.ajax vs $.getJSON)
+http://api.jquery.com/jquery.ajax/#jqXHR   (JQuery error Handling)
+https://stackoverflow.com/questions/1740218/error-handling-in-getjson-calls/19075640#19075640  (Error Handling with Get JSON)
+udacity's Ajax course
+udacity's Javascript Patterns course
+Cameron's moving planner app.
+Ben's Cat Clicker app

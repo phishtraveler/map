@@ -1,0 +1,106 @@
+html { 
+	height: 100% 
+}
+
+body { 
+	height: 100%; 
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    cursor: pointer;
+    cursor: hand;   
+    padding-left: 0;
+    margin: 0; 
+}
+
+li p {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hover {
+    background-color: #0099ff;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+.map {
+	height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    margin-top: 16px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.order {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0px;
+    overflow: scroll;
+    width: 25%;
+    height: 65%;
+
+}
+
+@media screen and (max-width: 400px) {
+    .pac-input {
+        width: 90%;
+    }
+    .pac-input:focus {
+        width: 91%;
+    }
+}
+
+@media only screen {
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) {}
+
+}
+
+.pac-container {
+    font-family: Roboto;
+}
