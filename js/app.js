@@ -61,7 +61,7 @@ function LocationModel() {
       searchBox.setBounds(bounds);
     }); 
 
-    // This loads the Google Maps error message if over 5000
+    // This loads the Google Maps error message if over 5000 ms
     var timer = window.setTimeout(timeOut, 5000);
     google.maps.event.addListener(map, 'tilesloaded', function() {
       window.clearTimeout(timer);
@@ -144,23 +144,27 @@ function LocationModel() {
     // creates a foursquare URL
     var foursquareURL = 'https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20150321' + '&ll=' +lat+ ',' +lng+ '&query=\'' +point.name +'\'&limit=1';
     
+    // Generic Call for Errors from https://stackoverflow.com/questions/1740218/error-handling-in-getjson-calls/19075640#19075640
+    $.ajaxSetup({
+      "error":function() { alert("error");  }
+  });
+
     // Downloads Foursquare info Asynchronously.  (Had to change this from $.getJSON to $.ajax for error handling)
     $.ajax(foursquareURL)
-    .done(function(response) {  console.log('Foursquare Info Loaded Successfully!')
-    .fail(function(jqXHR, textStatus, errorThrown) { console.log('getJSON request failed! ' + textStatus); })  
-      self.foursquareInfo = '<p>Foursquare:<br>';
-      var venue = response.response.venues[0];
+      .done(function(response) {
+        self.foursquareInfo = '<p>Foursquare:<br>';
+        var venue = response.response.venues[0];
          
-      // Name and Error Handling     
-      var venueName = venue.name;
+        // Name and Error Handling     
+        var venueName = venue.name;
           if (venueName !== null && venueName !== undefined) {
               self.foursquareInfo += 'Name: ' +
                 venueName + '<br>';
           } else {
             self.foursquareInfo += 'Name: Not Found' + '<br>';
           } 
-      // Phone Number and Error Handling    
-      var phoneNum = venue.contact.formattedPhone;
+        // Phone Number and Error Handling    
+        var phoneNum = venue.contact.formattedPhone;
           if (phoneNum !== null && phoneNum !== undefined) {
               self.foursquareInfo += 'Phone: ' +
                 phoneNum + '<br>';
