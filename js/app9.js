@@ -34,11 +34,8 @@ function LocationModel() {
     var input = (document.getElementById('pac-input'));
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-    var autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.bindTo('bounds', map);
-
-    var searchBox = new google.maps.places.SearchBox(
-      (input));
+    //var searchBox = new google.maps.places.SearchBox(
+      //(input));
 
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
@@ -80,10 +77,10 @@ function LocationModel() {
   Function to pre-populate the map with place types.  nearbySearch retuns up to 20 places.
   */
   function getPlaces() {
-    var request = {
-      location: frenchQuarter,
-      radius: 550,
-      types: ['cafe', 'restaurant', 'bar', 'grocery']
+  var request = {
+    location: frenchQuarter,
+    radius: 550,
+    types: ['cafe', 'restaurant', 'bar', 'grocery']
     };
 
     infowindow = new google.maps.InfoWindow();
@@ -145,7 +142,12 @@ function LocationModel() {
 
   this.getFoursquareInfo = function(point) {
     // creates a foursquare URL
-    var foursquareURL = 'https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20150321' + '&ll=' +lat+ ',' +lng+ '&query=\'' +point.name +'\'&limit=1';   
+    var foursquareURL = 'https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20150321' + '&ll=' +lat+ ',' +lng+ '&query=\'' +point.name +'\'&limit=1';
+    
+    // Generic Call for Errors from https://stackoverflow.com/questions/1740218/error-handling-in-getjson-calls/19075640#19075640
+    $.ajaxSetup({
+      "error":function() { alert("error");  }
+  });
 
     // Downloads Foursquare info Asynchronously.  (Had to change this from $.getJSON to $.ajax for error handling)
     $.ajax(foursquareURL)

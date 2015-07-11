@@ -5,13 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Neighborhood Map Project</title>
-        <link rel="stylesheet" href="css/offline-language-english.css"/>
-        <link rel='stylesheet' href='css/offline-theme-dark.css'/>
+        <link rel="stylesheet" href="css/offline-language-english-indicator.css"/>
+        <link rel='stylesheet' href='css/offline-theme-dark-indicator.css'/>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
         <script src="js/lib/knockout-3.3.0.js"></script>
-        <script src="js/lib/jquery-2.1.3.min.js"></script>  
+        <script src="js/lib/jquery-2.1.3.min.js"></script>
+        <script src="js/lib/offline.min.js"
+        <script>
+            var run = function(){
+                if (Offline.state === 'up') {
+                Offline.check();
+                }
+            };
+
+            setInterval(run, 7000);
+        </script> 
     </head>
     <body>
     	<input id="pac-input" class="controls" type="text"
