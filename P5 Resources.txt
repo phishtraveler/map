@@ -25,3 +25,4 @@ udacity's Ajax course
 udacity's Javascript Patterns course
 Cameron's moving planner app.
 Ben's Cat Clicker app
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
