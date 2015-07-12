@@ -19,7 +19,8 @@ function LocationModel() {
 
   
   /*
-  Initialize loads the map and searchbox for highlights
+  Initialize loads the map and searchbox for highlights.
+  Autocomplete call forces the map to only find locations in the bounds of the map
   */
   function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'), {
